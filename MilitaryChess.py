@@ -12,7 +12,7 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         # Variables
-        isHidden = False
+        isHidden = True
         self.chessboard = Chessboard.Chessboard(isHidden)   # 棋盘
         self.players = [Player.Player(), Player.Player()]   # 玩家
         self.round = 0                                      # 回合
@@ -220,7 +220,7 @@ class MainWindow(QMainWindow):
         figurePos = (x, y)
         piece = self.getPieceFromPos(figurePos)
         pos = self.figurePos2boardPos(figurePos)
-        print(figurePos, pos)
+        # print(figurePos, pos)
 
         if piece is None:
             oldPiece = currentPlayer.getCurrentPiece()

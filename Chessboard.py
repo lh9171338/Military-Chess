@@ -26,7 +26,6 @@ class Chessboard:
                 blackPiece = Piece.Piece(role, Piece.Black, state=Piece.Revealed)
             pieces.append(redPiece)
             pieces.append(blackPiece)
-        random.seed(0)
         random.shuffle(pieces)
 
         # 行营坐标
