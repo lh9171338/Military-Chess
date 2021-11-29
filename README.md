@@ -11,5 +11,5 @@ python MilitaryChess.py
 
 # 3. UI
 <p align="center">
-    <img width="50%" src="https://github.com/lh9171338/Military-Chess/blob/main/image/UI.png"/>
+    <img width="50%" src="image/UI.png"/>
 </p> 
