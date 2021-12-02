@@ -171,23 +171,23 @@ class MainWindow(QMainWindow):
             side = piece.getSide()
             assert state in [Piece.Hidden, Piece.Revealed], 'state must be in [Piece.Hidden, Piece.Revealed]'
             if state == Piece.Hidden:
-                pushButton.setStyleSheet('QPushButton{background-color: burlywood;border-radius: 4px;'
+                pushButton.setStyleSheet('QPushButton{background-color: burlywood;border-radius: 10px;'
                                          'border: 1px gray;border-style: solid}'
-                                         'QPushButton:hover{background-color: navajowhite;border-radius: 4px;'
+                                         'QPushButton:hover{background-color: navajowhite;border-radius: 10px;'
                                          'border: 1px dodgerblue;border-style: solid}')
                 pushButton.setEnabled(True)
             else:
                 pushButton.setText(piece.getRole())
                 if side == Piece.Red:
                     pushButton.setStyleSheet('QPushButton{background-color: gainsboro;color: red;'
-                                             'border-radius: 4px;border: 1px gray;border-style: solid}'
+                                             'border-radius: 10px;border: 1px gray;border-style: solid}'
                                              'QPushButton:hover{background-color: white;color: red;'
-                                             'border-radius: 4px;border: 1px dodgerblue;border-style: solid}')
+                                             'border-radius: 10px;border: 1px dodgerblue;border-style: solid}')
                 else:
                     pushButton.setStyleSheet('QPushButton{background-color: gainsboro;color: forestgreen;'
-                                             'border-radius: 4px;border: 1px gray;border-style: solid}'
+                                             'border-radius: 10px;border: 1px gray;border-style: solid}'
                                              'QPushButton:hover{background-color: white;color: forestgreen;'
-                                             'border-radius: 4px;border: 1px dodgerblue;border-style: solid}')
+                                             'border-radius: 10px;border: 1px dodgerblue;border-style: solid}')
                 font = QFont('幼圆')
                 font.setBold(True)
                 pushButton.setFont(font)
@@ -197,13 +197,13 @@ class MainWindow(QMainWindow):
                     if piece == oldPiece:
                         if side == Piece.Red:
                             pushButton.setStyleSheet('QPushButton{background-color: gainsboro;color: red;'
-                                                     'border-radius: 4px;border: 4px red;border-style: solid}')
+                                                     'border-radius: 10px;border: 4px red;border-style: solid}')
                         else:
                             pushButton.setStyleSheet('QPushButton{background-color: gainsboro;color: forestgreen;'
-                                                     'border-radius: 4px;border: 4px green;border-style: solid}')
+                                                     'border-radius: 10px;border: 4px green;border-style: solid}')
                         pushButton.setEnabled(False)
                     else:
-                        pushButton.setEnabled(True)
+                        pushButton.setEnabled(piece.isMovable())
         if self.isFinished:
             pushButton.setEnabled(False)
 
